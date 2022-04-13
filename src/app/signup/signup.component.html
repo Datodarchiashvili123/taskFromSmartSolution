@@ -1,0 +1,20 @@
+<div class="create-user">
+  <form class="create-user__form" [formGroup]="registration">
+    <div class="form-group">
+      <p >{{errorMessage | json }}</p>
+      <p *ngIf="successMessage">Email is saved</p>
+      <input type="email" formControlName="organization"  placeholder="Organization name" >
+      <input type="text"  formControlName="mobile" placeholder="Phone Number" >
+      <input type="text"  formControlName="address" placeholder="Address" >
+      <input type="text"  formControlName="username" placeholder="User Name" >
+      <input type="text"  formControlName="name" placeholder="name" >
+      <input type="text"  formControlName="surname" placeholder="surname" >
+      <input type="email" formControlName="email" placeholder="Enter Email" [email]="true">
+      <div class="" *ngIf="submitted && f.email.errors"></div>
+      <input type="password" formControlName="password" placeholder="password" >
+      <input type="password" formControlName="password" placeholder="repeat password" >
+
+    </div>
+    <button class="button create-user__btn" (click)="onSubmit()">Sign Up</button>
+  </form>
+</div>

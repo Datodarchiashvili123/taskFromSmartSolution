@@ -1,0 +1,92 @@
+h1 {
+  text-transform: Uppercase;
+  margin-bottom: .5em;
+  font-family: 'Rubik', sans-serif;
+  font-size: 4rem;
+  color: #E4E5E6; }
+
+h1 {
+  position: relative;
+  background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 10px 10px 10px rgba(0,0,0,.5), 20px 20px 20px rgba(0,0,0,.4), 30px 30px 30px rgba(0,0,0,.1);
+
+}
+
+.organisation{
+  position: absolute;
+  top: -30px;
+}
+
+.task{
+  padding: 10px;
+  font-weight: bold;
+  &__developer{
+    span{
+      color: #1976d2;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+
+  &__status{
+      span{
+        color: #1976d2;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    &--done{
+      span{
+        color: forestgreen;
+      }
+    }
+  }
+}
+
+
+.dashboard__container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 800px
+}
+.tasks{
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #3f87a6;
+  margin: 20px;
+
+  &--inprogress{
+    border: 5px solid #fdce09 !important;
+  }
+
+  &--done{
+    border: 5px solid #17c317
+  }
+}
+
+.d-flex{
+  display: flex;
+}
+
+.button--red{
+  flex-basis: 50%;
+  background-color: red;
+}
+
+.button{
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  border: 1px solid #fff;
+}
+
+.button--green{
+  flex-basis: 50%;
+  background: linear-gradient(0.25turn,  #f69d3c, #ebf8e1, #3f87a6);
+}
+
+.button--done{
+  background: linear-gradient(0.25turn,  #f69d3c, #ebf8e1, #3f87a6);
+}

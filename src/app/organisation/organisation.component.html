@@ -1,0 +1,45 @@
+<div class="organisation" *ngIf="organisation$ | async as organisation">
+  <h1>  {{organisation.organisationName}} </h1>
+</div>
+<div class="d-flex">
+  <div class="dashboard__container">
+    <div class="tasks" *ngFor="let task of toDoTasks$ | async;">
+      <div class="task">{{task.title}}</div>
+      <div class="task">{{task.description}}</div>
+      <div class="task">{{task.deadline}}</div>
+      <div class="task task__status"> Task Status: <span>{{task.status}}</span></div>
+      <div class="task task__developer">Developer <span>{{task.username}} </span></div>
+      <button class="button" (click)="fromTodoToInProgress(task.id, task )">In Progress ></button>
+    </div>
+  </div>
+  <div class="dashboard__container">
+    <div class="tasks tasks--inprogress" *ngFor="let task of inProgressTasks$ | async ">
+      <div class="task">{{task.title}}</div>
+      <div class="task">{{task.description}}</div>
+      <div class="task">{{task.deadline}}</div>
+      <div class="task task__status">Task Status: <span>{{task.status}}</span></div>
+      <div class="task task__developer">Developer: <span> {{task.username}} </span></div>
+      <div class="d-flex">
+        <button class="button button--red"
+                (click)="fromInProgressToToDo(task.id, task )">< To DO
+        </button>
+        <button class="button button--green"
+                (click)="fromInProgressToDone(task.id, task )">To Done >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard__container">
+    <div class="tasks tasks--done" *ngFor="let task of doneTasks$ | async ">
+      <div class="task">{{task.title}}</div>
+      <div class="task">{{task.description}}</div>
+      <div class="task">{{task.deadline}}</div>
+      <div class="task task__status task__status--done">Task Status: <span>{{task.status}}</span></div>
+      <div class="task task__developer">Developer: <span> {{task.username}} </span></div>
+      <button class="button button--done" (click)="fromDoneToInProgress(task.id, task )"> < To InProgress</button>
+    </div>
+  </div>
+</div>
+
+
+
