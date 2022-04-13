@@ -1,0 +1,2 @@
+# taskFromSmartSolution
+Angular Project
